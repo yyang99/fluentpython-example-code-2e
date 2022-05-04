@@ -4,7 +4,7 @@ class Card(NamedTuple):
     suits: str
 
 class Deck:
-    ranks = [ str(n) for n in range(2, 11)] + list('AJQK')
+    ranks = [str(n) for n in range(2, 11)] + list('AJQK')
     suits = "clubs hearts spades diamonds".split()
     def __init__(self):
         self._cards = [Card(rank, suit) for rank in self.ranks for suit in self.suits]
