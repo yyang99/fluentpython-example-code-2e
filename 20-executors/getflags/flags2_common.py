@@ -23,7 +23,7 @@ SERVERS = {
     'DELAY':  'http://localhost:8001/flags',
     'ERROR':  'http://localhost:8002/flags',
 }
-DEFAULT_SERVER = 'LOCAL'
+DEFAULT_SERVER = 'REMOTE'
 
 DEST_DIR = Path('downloaded')
 COUNTRY_CODES_FILE = Path('country_codes.txt')
