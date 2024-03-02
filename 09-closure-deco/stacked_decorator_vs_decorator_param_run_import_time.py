@@ -50,19 +50,19 @@ def second(f):
 def register(key):  # <2>
     def decorate(func):  # <3>
         print(f'running register {func}(key={key})->decorate({func})')
-        return func  # <6>
+        return func  # this will return original func without replace it
     return decorate  # <7>
 
 def param_decorator(parameter):
     print(f'apply param_decorator({parameter})')
     def decorator(func):
         print(f'apply decorator({parameter})')
-        def inner_decorator(n):
+        def inner_decorator(n):     # this inner_decorator is a new function which will replace func()
             result = func(n)
             print(f'inner_decorator({n}): called {func.__name__}({n}) -> {result}')
             return result
 
-        return decorator
+        return inner_decorator
     return decorator
 
 print("\n==================[ decorator with parameter ]")
