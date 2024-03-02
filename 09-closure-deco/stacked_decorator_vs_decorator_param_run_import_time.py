@@ -4,19 +4,18 @@
 #
 #-----------------[ decorator with parameters ]
 #
-# @decorator_param(arg)
-# def func()
+# @decorator_param(decorator_arg)
+# def func(*args, **kwargs)
 #   ...
 #
 # run at import time ===>
-#      func = decorator_param(arg)(func)
+#      func = decorator_param(decorator_arg)(func)
 #
 #-----------------[ stacked decorators ]
 #
 # @decorator2
 # @decorator1
-# def func()
-# def func()
+# def func(*args, **kwargs)
 #   ...
 #
 # run at import time ===>
@@ -25,7 +24,7 @@
 #
 #=================[ run at import time ]
 #
-# both at run time run ===> func()
+# both at run time run ===> func(*args, **kwargs)
 #
 #
 
