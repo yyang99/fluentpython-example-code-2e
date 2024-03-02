@@ -1,3 +1,34 @@
+# Notes stacked decorator vs decorator with parameters
+#
+#=================[ run at import time ]
+#
+#-----------------[ decorator with parameters ]
+#
+# @decorator_param(arg)
+# def func()
+#   ...
+#
+# run at import time ===>
+#      func = decorator_param(arg)(func)
+#
+#-----------------[ stacked decorators ]
+#
+# @decorator2
+# @decorator1
+# def func()
+# def func()
+#   ...
+#
+# run at import time ===>
+#      func = decorator1(func)
+#      func = decorator2(func)
+#
+#=================[ run at import time ]
+#
+# both at run time run ===> func()
+#
+#
+
 def first(f):
     print(f'apply first({f.__name__})')
 
