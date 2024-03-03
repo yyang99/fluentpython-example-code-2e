@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "fluentpython-example-code-2e"
+version = "0.1.0"
+description = ""
+authors = ["yyang99 <yyang99@hotmail.com>"]
+readme = "README.md"
+packages = [{include = "fluentpython_example_code_2e"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+PyYAML = "^6.0"
+httpx = "^0.23.3"
+tqdm = "^4.65.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
