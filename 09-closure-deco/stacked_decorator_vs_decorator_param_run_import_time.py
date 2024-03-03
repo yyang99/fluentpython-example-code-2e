@@ -1,34 +1,34 @@
-####################################################################
-#
-#  Stacked Decorator vs Decorator With Parameters
-#
-# =================[ run at import time ]===========================
-#
-# -----------------[ decorator with parameters ]--------------------
-#
-# @decorator_param(decorator_arg)
-# def func(*args, **kwargs)
-#   ...
-#
-# run at import time ===>
-#      func = decorator_param(decorator_arg)(func)
-#
-# -----------------[ stacked decorators ]---------------------------
-#
-# @decorator2
-# @decorator1
-# def func(*args, **kwargs)
-#   ...
-#
-# run at import time ===>
-#      func = decorator1(func)
-#      func = decorator2(func)
-#
-# =================[ run at import time ]===========================
-#
-# both at run time run ===> func(*args, **kwargs)
-#
-###################################################################
+#####################################################################
+#                                                                   #
+#  Stacked Decorator vs Decorator With Parameters                   #
+#                                                                   #
+# =================[ run at import time ]===========================#
+#                                                                   #
+# -----------------[ decorator with parameters ]--------------------#
+#                                                                   #
+# @decorator_param(decorator_arg)                                   #
+# def func(*args, **kwargs)                                         #
+#   ...                                                             #
+#                                                                   #
+# run at import time ===>                                           #
+#      func = decorator_param(decorator_arg)(func)                  #
+#                                                                   #
+# -----------------[ stacked decorators ]---------------------------#
+#                                                                   #
+# @decorator2                                                       #
+# @decorator1                                                       #
+# def func(*args, **kwargs)                                         #
+#   ...                                                             #
+#                                                                   #
+# run at import time ===>                                           #
+#      func = decorator1(func)                                      #
+#      func = decorator2(func)                                      #
+#                                                                   #
+# =================[ run at import time ]===========================#
+#                                                                   #
+# both at run time run ===> func(*args, **kwargs)                   #
+#                                                                   #
+#####################################################################
 
 print("\n######################################### [ at Import Time ]")
 
